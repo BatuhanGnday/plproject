@@ -1,6 +1,9 @@
 # Python program to count all substrings with same
 # first and last characters.
 
+# Arrays of goal strings
+goals = []
+
 # Returns true if first and last characters
 # of s are same.
 def checkEquality(s):
@@ -19,7 +22,8 @@ def countSubstringWithEqualEnds(s):
 
             # Check if current substring has same
             # starting and ending characters.
-            if (checkEquality(s[i:i + j])):
+            if checkEquality(s[i:i + j]):
+                goals.append(s[i: i + j])
                 result += 1;
 
     return result;
@@ -29,5 +33,5 @@ def countSubstringWithEqualEnds(s):
 f = open("demofile.txt", "r")
 
 print(countSubstringWithEqualEnds(f.read()));
-
+print(goals)
 
